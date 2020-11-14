@@ -7,7 +7,7 @@ package fixed_size_example_network
 
 import (
 	"fmt"
-	"github.com/gmarchetti/elasticsearch-indexer-testing-v1/elasticsearch_indexer/example_services"
+	"github.com/gmarchetti/elasticsearch-indexer-testing-v1/elasticsearch_indexer/elasticsearch_services"
 	"github.com/kurtosis-tech/kurtosis-go/lib/networks"
 	"github.com/kurtosis-tech/kurtosis-go/lib/services"
 	"github.com/palantir/stacktrace"
@@ -28,7 +28,7 @@ func (network FixedSizeExampleNetwork) GetNumNodes() int {
 	return network.numNodes
 }
 
-func (network *FixedSizeExampleNetwork) GetService(idInt int) (example_services.ExampleService, error) {
+func (network *FixedSizeExampleNetwork) GetService(idInt int) (elasticsearch_services.ExampleService, error) {
 	if idInt < 0 || idInt >= network.numNodes {
 		return nil, stacktrace.NewError("Invalid service ID '%v'", idInt)
 	}
@@ -37,7 +37,7 @@ func (network *FixedSizeExampleNetwork) GetService(idInt int) (example_services.
 	if err != nil {
 		return nil, stacktrace.Propagate(err, "An error occurred getting the service node info")
 	}
-	castedService := serviceNode.Service.(example_services.ExampleService)
+	castedService := serviceNode.Service.(elasticsearch_services.ExampleService)
 	return castedService, nil
 }
 
@@ -58,8 +58,8 @@ func (loader FixedSizeExampleNetworkLoader) ConfigureNetwork(builder *networks.S
 	builder.AddConfiguration(
 		vanillaConfigId,
 		loader.serviceImage,
-		example_services.ExampleServiceInitializerCore{},
-		example_services.ExampleAvailabilityCheckerCore{})
+		elasticsearch_services.ExampleServiceInitializerCore{},
+		elasticsearch_services.ExampleAvailabilityCheckerCore{})
 	return nil
 }
 

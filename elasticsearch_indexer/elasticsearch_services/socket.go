@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package example_services
+package elasticsearch_services
 
 type Socket struct {
 	IPAddr string

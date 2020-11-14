@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package example_services
+package elasticsearch_services
 
 import (
 	"github.com/kurtosis-tech/kurtosis-go/lib/services"
