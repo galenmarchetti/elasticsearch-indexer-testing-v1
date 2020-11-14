@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package example_testsuite
+package elasticsearch_testsuite
 
 import (
 	"fmt"

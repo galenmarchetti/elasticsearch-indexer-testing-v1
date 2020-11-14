@@ -8,7 +8,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/gmarchetti/elasticsearch-indexer-testing-v1/elasticsearch_indexer/example_testsuite"
+	"github.com/gmarchetti/elasticsearch-indexer-testing-v1/elasticsearch_indexer/elasticsearch_testsuite"
 	"github.com/kurtosis-tech/kurtosis-go/lib/client"
 	"github.com/sirupsen/logrus"
 	"os"
@@ -59,7 +59,7 @@ func main() {
 	}
 	logrus.SetLevel(level)
 
-	testSuite := example_testsuite.NewExampleTestsuite(*serviceImageArg)
+	testSuite := elasticsearch_testsuite.NewExampleTestsuite(*serviceImageArg)
 	exitCode := client.Run(testSuite, *metadataFilepath, *servicesDirpathArg, *testArg, *kurtosisApiIpArg)
 	os.Exit(exitCode)
 }
