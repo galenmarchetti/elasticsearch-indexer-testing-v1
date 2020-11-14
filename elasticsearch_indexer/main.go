@@ -8,7 +8,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/gmarchetti/elasticsearch-indexer-testing-v1/example_impl/example_testsuite"
+	"github.com/gmarchetti/elasticsearch-indexer-testing-v1/elasticsearch_indexer/example_testsuite"
 	"github.com/kurtosis-tech/kurtosis-go/lib/client"
 	"github.com/sirupsen/logrus"
 	"os"
