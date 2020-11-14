@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package example_services
+package services
 
 type Socket struct {
 	IPAddr string

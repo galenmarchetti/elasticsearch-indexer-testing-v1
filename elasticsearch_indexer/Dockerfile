@@ -9,7 +9,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN go build -o testsuite example_impl/main.go
+RUN go build -o testsuite elasticsearch_indexer/main.go
 
 CMD ./testsuite \
     `# ------------- Custom variable particular to this test suite -----------------` \
